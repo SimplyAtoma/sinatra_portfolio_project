@@ -1,3 +1,3 @@
 class VideogamesController < ApplicationController
-
+  
 end
