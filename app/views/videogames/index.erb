@@ -6,7 +6,7 @@
 	<body>
 	  <ul>
 		<% @videogames.each do |videogame|%>
-		<li><a href="/videogames/<%=@videogame.id%>"></a><%videogame.name%></li>
+		<li><a href="/videogames/<%=videogame.id%>"><%videogame.name%></a></li>
 		<% end %>
 		</ul>
 	</body>
