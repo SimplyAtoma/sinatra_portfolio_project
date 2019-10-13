@@ -1,4 +1,4 @@
 require './config/environment'
 
-use VideogamesController
+use VideogamesContoller
 run ApplicationController

@@ -1,7 +1,8 @@
+
 class ApplicationController < Sinatra::Base
 
   configure do
-  	set :views, "sinatra_project/app/views"
+    set :views, "app/views"
   	set :public_dir, "public"
   end
 
