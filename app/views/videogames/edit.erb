@@ -1,7 +1,7 @@
-<form action="/videogames" method="POST" >
+<form action="/videogames/<%=@videogame.id%>" method="POST" >
   <input type="hidden" name="_method" value="patch">
-  <p>Game Title: <input type="text" name="name"></p>
-  <p>Game Console: <input type="text" name="console"></p>
-  <p>Game Genre: <input type="text" name="genre"></p>
+  <p>Game Title: <input type="text" name="name" value="<%=@videogame.name%>"></p>
+  <p>Game Console: <input type="text" name="console" value="<%=@videogame.console%>"></p>
+  <p>Game Genre: <input type="text" name="genre" value="<%=@videogame.genre%>"></p>
   <input type="submit">
 </form>
