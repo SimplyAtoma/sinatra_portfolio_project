@@ -15,7 +15,13 @@ class VideogamesController < ApplicationController
   end 
   
   patch '/videogames/:id/edit' do
+    @videogame = Videogame.find(id: params[:id])
     
+    if @videogame.update(params[:videogame])
+      redirect "/videogames/#{@videogame.id}"
+    else 
+      redirect "/videogames/#{@videogame.id}/edit"
+    end 
   end 
   
   delete '/videogames/:id' do
@@ -24,7 +30,7 @@ class VideogamesController < ApplicationController
   
   #new game added 
   post '/videogames' do 
-    @videogame = Videogame.new(name: params[:name],console: params[:console],genre: params[:genre])
+    @videogame = Videogame.new(params)
     
     if @videogame.save
       redirect "/videogames/#{@videogame.id}"
