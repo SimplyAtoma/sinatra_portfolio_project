@@ -6,6 +6,18 @@ class VideogamesController < ApplicationController
   get '/videogames/new' do 
     erb :'videogames/new'
   end 
+  
+  get '/videogames/:id/edit' do
+    
+  end 
+  
+  patch '/videogames/:id/edit' do
+    
+  end 
+  
+  delete '/videogames/:id' do
+    
+  end 
 
   get '/videogames/:id' do
     @videogame = Videogame.find(id: params[:id])
