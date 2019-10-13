@@ -1,0 +1,9 @@
+<h3><%=@videogame.id%></h3>
+<h2><%=@videogame.name%></h2>
+<h3><%=@videogame.console%></h3>
+<h3><%=@videogame.genre%></h3>
+<a href="/videogames/<%=@videogame.id%>/edit"><button>Edit</button></a>
+<form action="/videogames/<%=@videogame.id%>" method="POST" >
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

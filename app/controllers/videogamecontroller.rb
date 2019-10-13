@@ -24,8 +24,15 @@ class VideogamesController < ApplicationController
     end 
   end 
   
+  #delete video game
   delete '/videogames/:id' do
+    videogame = Videogame.find(id: params[:id])
     
+    if videogame.destroy
+      redirect "/videogames"
+    else 
+      redirect "/videogames/#{videogame.id}"
+    end 
   end 
   
   #new game added 
@@ -33,7 +40,7 @@ class VideogamesController < ApplicationController
     @videogame = Videogame.new(params)
     
     if @videogame.save
-      redirect "/videogames/#{@videogame.id}"
+      redirect "/videogames"
     else 
       redirect '/videogames/new'
     end 
