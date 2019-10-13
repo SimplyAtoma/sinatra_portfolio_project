@@ -3,12 +3,15 @@ class VideogamesController < ApplicationController
     erb :index
   end
   
+  #create new page
   get '/videogames/new' do 
     erb :'videogames/new'
   end 
   
+  #edit video game page
   get '/videogames/:id/edit' do
-    
+    @videogame = Videogame.find(id: params[:id])
+    erb :"videogames/edit"
   end 
   
   patch '/videogames/:id/edit' do
@@ -18,16 +21,8 @@ class VideogamesController < ApplicationController
   delete '/videogames/:id' do
     
   end 
-
-  get '/videogames/:id' do
-    @videogame = Videogame.find(id: params[:id])
-
-    if @videogame
-      redirect :"/videogames/show"
-    else
-      redirect '/videogames'
-  end
   
+  #new game added 
   post '/videogames' do 
     @videogame = Videogame.new(name: params[:name],console: params[:console],genre: params[:genre])
     
@@ -37,4 +32,16 @@ class VideogamesController < ApplicationController
       redirect '/videogames/new'
     end 
   end 
+
+  #show game page
+  get '/videogames/:id' do
+    @videogame = Videogame.find(id: params[:id])
+
+    if @videogame
+      redirect :"/videogames/show"
+    else
+      redirect '/videogames'
+  end
+  
+
 end
