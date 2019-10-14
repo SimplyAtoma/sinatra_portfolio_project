@@ -1,6 +1,14 @@
 class VideogamesController < ApplicationController
   get '/videogames'
-    erb :index
+  
+    if logged_in?
+      @user = current_user
+      #@videogames = Videogame.where(user_id: session[:user_id])
+      @videogames = @user.videogames
+      erb :'videogames/index'
+    else
+      redirect '/login'
+    end 
   end
   
   #create new page
