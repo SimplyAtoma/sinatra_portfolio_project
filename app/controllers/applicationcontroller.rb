@@ -1,3 +1,4 @@
+require './config/environment'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -8,7 +9,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-  	
+  	erb :"videgames/index"
   end
   
   helpers do 
