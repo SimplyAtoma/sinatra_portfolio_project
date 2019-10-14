@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 2019_10_12_221518) do
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
   end
 
   create_table "video_games", force: :cascade do |t|
