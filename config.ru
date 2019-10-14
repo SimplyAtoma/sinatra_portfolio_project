@@ -3,5 +3,6 @@ require './config/environment'
 
 
 use Rack::MethodOverride
-use VideogamesContoller
+use SessionController
+use VideogamesController
 run ApplicationController
