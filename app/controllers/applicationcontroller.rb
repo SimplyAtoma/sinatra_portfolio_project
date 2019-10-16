@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-  	erb :"videgames/index"
+  	erb :'session/login'
   end
   
   helpers do 

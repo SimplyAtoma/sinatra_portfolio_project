@@ -1,6 +1,5 @@
 class VideogamesController < ApplicationController
-  get '/videogames'
-  
+  get '/videogames' do 
     if logged_in?
       @user = current_user
       #@videogames = Videogame.where(user_id: session[:user_id])
@@ -13,7 +12,14 @@ class VideogamesController < ApplicationController
   
   #create new page
   get '/videogames/new' do 
-    erb :'videogames/new'
+    if logged_in?
+      @user = current_user
+      #@videogames = Videogame.where(user_id: session[:user_id])
+      @videogames = @user.videogames
+      erb :'videogames/new'
+    else
+      redirect '/login'
+    end 
   end 
   
   #edit video game page
@@ -62,7 +68,8 @@ class VideogamesController < ApplicationController
       redirect :"/videogames/show"
     else
       redirect '/videogames'
-  end
+    end
+  end 
   
 
 end
