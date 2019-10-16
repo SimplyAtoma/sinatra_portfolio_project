@@ -1,6 +1,6 @@
 require "bundler/gem_tasks"
 task :default => :spec
-require './config/environment'
+require_relative './config/environment'
 require 'sinatra/activerecord/rake'
 
 desc 'drop into the Pry console'
