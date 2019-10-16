@@ -1,5 +1,14 @@
 class SessionController < ApplicationController
   
+  get '/session/signup' do 
+    erb :'session/signup'
+  end 
+  
+  post '/signup' do 
+  @user = User.new(name: "name", email: "email", password: "password")
+  redirect '/videogames/new'
+  end 
+  
   get '/login' do 
     erb :'session/login'
   end 
@@ -13,5 +22,10 @@ class SessionController < ApplicationController
     else 
       redirect '/login'
     end 
+  end 
+  
+  get '/logout' do 
+    session.clear
+    redirect '/login'
   end 
 end 
