@@ -1,5 +1,7 @@
 # SinatraProject
 
+  Hello! This is my first Sinatra project. This project uses Active Record to keep track of video games and users.
+It will also allow users to add delete or edit their video game collection whilst only showing them the games that belong to them in the database, and only allowing them to edit their own collection.
 
 ## Installation
 
@@ -16,10 +18,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install sinatra_project
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
